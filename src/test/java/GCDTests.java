@@ -2,6 +2,8 @@
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.time.Duration;
+import java.time.Instant;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -79,21 +81,21 @@ public class GCDTests {
 
     @Test
     public void testTiming1000000And900000(){
-
         Logger LOGGER = Logger.getLogger(GCDTests.class.getName());
         LOGGER.setLevel(Level.INFO);
 
-        final long startTime1 = System.nanoTime();
+
+        Instant start = Instant.now();
         GCD.gcd(1000000000, 900000000);
-        final long endTime1 = System.nanoTime();
+        Instant end = Instant.now();
 
 
-        LOGGER.log(Level.INFO, "GCD Calculated in " + (endTime1 - startTime1) + " Nanoseconds");
+        LOGGER.log(Level.INFO, "GCD Calculated in " + Duration.between(start, end).toNanos() + " Nanoseconds");
 
-        final long startTime2 = System.nanoTime();
+        start = Instant.now();
         GCD.gcd2(1000000000, 900000000);
-        final long endTime2= System.nanoTime();
+        end = Instant.now();
 
-        LOGGER.log(Level.INFO, "GCD2 Calculated in " + (endTime2 - startTime2) + " Nanoseconds");
+        LOGGER.log(Level.INFO, "GCD2 Calculated in " + Duration.between(start, end).toNanos() + " Nanoseconds");
     }
 }
