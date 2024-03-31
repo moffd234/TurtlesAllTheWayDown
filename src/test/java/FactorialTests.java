@@ -2,7 +2,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class FactorialTests {
-    
+
     @Test
     public void testFactorialOf0() {
 

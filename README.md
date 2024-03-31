@@ -14,9 +14,9 @@ Then:
 
 Build out a factorial class and some tests.
 
-Build out a GCD class and some tests.
+Build out a GCDTests class and some tests.
 
-Compare GCD and GCD2 to each other using timing statements. 
+Compare GCDTests and GCD2 to each other using timing statements. 
 
 *Remember how to do timing in Java?*
 
